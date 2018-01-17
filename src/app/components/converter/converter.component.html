@@ -5,11 +5,18 @@
 			Type in amount and select currency
 		</span>
 		<div class="_currency-converter_row__inputs">
-			<input type="text" class="_currency-converter_row_inputs__value" placeholder="0.00" />
-			<select name="" id="">
-				<option value="CAD">CAD</option>
-				<option value="USD">USD</option>
-				<option value="EUR">EUR</option>
+			<input type="text"
+						 class="_currency-converter_row_inputs__value"
+						 placeholder="0.00"
+						 name="initial_value"
+						 OnlyNumber="true"
+						 [(ngModel)]="initial_value"
+						 (input)="myEvent($event.target.value)"
+					 />
+			<select [(ngModel)]="initial_currency"
+							(change)="myEvent()">
+				<option *ngFor="let currency of currencies"
+								[ngValue]="currency">{{currency}}</option>
 			</select>
 		</div>
 	</div>
@@ -18,11 +25,18 @@
 			Converted amount
 		</span>
 		<div class="_currency-converter_row__inputs">
-			<input type="text" class="_currency-converter_row_inputs__value" placeholder="0.00" />
-			<select name="" id="">
-				<option value="CAD">CAD</option>
-				<option value="USD">USD</option>
-				<option value="EUR">EUR</option>
+			<input type="text"
+						 class="_currency-converter_row_inputs__value"
+						 placeholder="0.00"
+						 name="converted_value"
+						 OnlyNumber="true"
+						 [(ngModel)]="converted_value"
+						 (input)="myEvent($event.target.value)"
+					 />
+			<select [(ngModel)]="converted_currency"
+							(change)="myEvent()">
+				<option *ngFor="let currency of currencies"
+								[ngValue]="currency">{{currency}}</option>
 			</select>
 		</div>
 	</div>

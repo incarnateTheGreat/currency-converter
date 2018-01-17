@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConverterComponent } from './components/converter/converter.component';
 
+import { OnlyNumber } from './components/converter/onlynumber.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ConverterComponent
+    ConverterComponent,
+		OnlyNumber
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+		FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
