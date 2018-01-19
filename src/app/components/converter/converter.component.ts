@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { fx } from 'money';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-converter',
@@ -13,13 +14,22 @@ export class ConverterComponent implements OnInit {
 	initial_currency:string = this.currencies[0];
 	converted_value:number = null;
 	converted_currency:string = this.currencies[1];
+	isError:boolean = false;
+	errorMessage:string = "";
 
 	@ViewChild("modal") child;
 
   ngOnInit() {}
 
-	convertCurrency(value) {
+	convertCurrency() {
+		if (_.isEmpty(this.initial_value)) {
+			this.converted_value = 0;
+			return false;
+		}
+
 		if (this.initial_value > 0) {
+			this.isError = false;
+
 			const getConversion = () => {
 				const rate = fx(this.initial_value).
 										 from(this.initial_currency).
@@ -32,8 +42,13 @@ export class ConverterComponent implements OnInit {
 				.then((resp) => resp.json())
 				.then((data) => fx.rates = data.rates)
 				.then(getConversion)
+				.catch(() => {
+					this.errorMessage = "Sorry. There was a problem with your request. Please try again later.";
+					this.isError = true;
+				})
 		} else {
 			this.converted_value = 0;
+			this.isError = true;
 		}
 	}
 

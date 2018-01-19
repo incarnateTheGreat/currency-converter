@@ -22,5 +22,9 @@
 		margin: 0 auto;
 		overflow: hidden;
 		width: 750px;
+
+		@media only screen and (max-width: 992px) {
+			width: 550px;
+		}
 	}
 }

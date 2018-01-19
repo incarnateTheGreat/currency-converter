@@ -1,1 +1,25 @@
+.container {
+	display: flex;
+	font-family: "Tahoma";
+	font-size: 13px;
+	justify-content: space-between;
 
+	@media only screen and (max-width: 992px) {
+		flex-direction: column;
+	}
+
+	.thing {
+		border-radius: 2px;
+		background-color: #ffffff;
+		box-shadow: 0 0 4px 0 rgba(155, 155, 155, 0.25);
+		border: solid 1px #d2d2d2;
+		display: flex;
+		flex-direction: column;
+		flex-basis: calc(33.333% - 45px);
+		padding: 10px 15px;
+
+		@media only screen and (max-width: 992px) {
+			margin: 0 0 15px;
+		}
+	}
+}

@@ -8,7 +8,7 @@
 		<div class="_currency-converter_row__inputs">
 			<input type="text"
 						 class="_currency-converter_row_inputs__value"
-						 placeholder="0.00"
+						 placeholder="Type in Currency..."
 						 name="initial_value"
 						 OnlyNumber="true"
 						 [(ngModel)]="initial_value"
@@ -20,6 +20,7 @@
 								[ngValue]="currency">{{currency}}</option>
 			</select>
 		</div>
+		<span class="_currency-converter_row__error-message" [ngClass]="{'-active': isError}">{{errorMessage}}</span>
 	</div>
 	<div class="_currency-converter__row">
 		<span class="_currency-converter_row__title">
@@ -28,7 +29,7 @@
 		<div class="_currency-converter_row__inputs">
 			<input type="text"
 						 class="_currency-converter_row_inputs__value"
-						 placeholder="0.00"
+						 placeholder="See result here..."
 						 name="converted_value"
 						 OnlyNumber="true"
 						 readonly
@@ -42,5 +43,5 @@
 			</select>
 		</div>
 	</div>
-	<span class="_currency-converter__disclaimer-link" (click)="openDisclaimer()">Disclaimer</span>
+	<div class="_currency-converter__disclaimer-link" (click)="openDisclaimer()">Disclaimer</div>
 </div>
