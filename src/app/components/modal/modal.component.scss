@@ -1,0 +1,26 @@
+.modal {
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+	&.-active {
+		display: flex;
+	}
+
+	._modal-container {
+		align-self: center;
+		background-color: #ffffff;
+		border-radius: 2px;
+		display: flex;
+		height: 85%;
+		margin: 0 auto;
+		overflow: hidden;
+		width: 750px;
+	}
+}

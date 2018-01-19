@@ -1,4 +1,5 @@
 <div class="currency-converter">
+	<component-modal #modal></component-modal>
 	<span class="_currency-converter__title">Currency Converter</span>
 	<div class="_currency-converter__row">
 		<span class="_currency-converter_row__title">
@@ -11,10 +12,10 @@
 						 name="initial_value"
 						 OnlyNumber="true"
 						 [(ngModel)]="initial_value"
-						 (input)="myEvent($event.target.value)"
+						 (input)="convertCurrency($event.target.value)"
 					 />
 			<select [(ngModel)]="initial_currency"
-							(change)="myEvent()">
+							(change)="convertCurrency()">
 				<option *ngFor="let currency of currencies"
 								[ngValue]="currency">{{currency}}</option>
 			</select>
@@ -30,15 +31,16 @@
 						 placeholder="0.00"
 						 name="converted_value"
 						 OnlyNumber="true"
+						 readonly
 						 [(ngModel)]="converted_value"
-						 (input)="myEvent($event.target.value)"
+						 (input)="convertCurrency($event.target.value)"
 					 />
 			<select [(ngModel)]="converted_currency"
-							(change)="myEvent()">
+							(change)="convertCurrency()">
 				<option *ngFor="let currency of currencies"
 								[ngValue]="currency">{{currency}}</option>
 			</select>
 		</div>
 	</div>
-	<span class="_currency-converter__disclaimer-link">Disclaimer</span>
+	<span class="_currency-converter__disclaimer-link" (click)="openDisclaimer()">Disclaimer</span>
 </div>

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ConverterComponent } from './components/converter/converter.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 import { OnlyNumber } from './components/converter/onlynumber.directive';
 
@@ -11,6 +12,7 @@ import { OnlyNumber } from './components/converter/onlynumber.directive';
   declarations: [
     AppComponent,
     ConverterComponent,
+		ModalComponent,
 		OnlyNumber
   ],
   imports: [

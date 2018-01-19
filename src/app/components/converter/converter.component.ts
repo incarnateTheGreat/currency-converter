@@ -1,30 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { fx } from 'money';
 
 @Component({
   selector: 'app-converter',
   templateUrl: './converter.component.html',
-  styleUrls: ['./converter.component.css']
+  styleUrls: ['./converter.component.scss']
 })
 export class ConverterComponent implements OnInit {
-	initial_value:number;
-	initial_currency:string;
-	converted_value:number;
-	converted_currency:string;
-	currencies:string[];
+	currencies:string[] = ["CAD", "USD", "EUR"];
+	initial_value:number = null;
+	initial_currency:string = this.currencies[0];
+	converted_value:number = null;
+	converted_currency:string = this.currencies[1];
 
-  constructor() {
-		this.currencies = ["CAD", "USD", "EUR"];
-		this.initial_value = null;
-		this.initial_currency = this.currencies[0];
-		this.converted_value = null;
-		this.converted_currency = this.currencies[1];
-	}
+	@ViewChild("modal") child;
 
   ngOnInit() {}
 
-	myEvent(value) {
+	convertCurrency(value) {
 		if (this.initial_value > 0) {
 			const getConversion = () => {
 				const rate = fx(this.initial_value).
@@ -41,5 +35,9 @@ export class ConverterComponent implements OnInit {
 		} else {
 			this.converted_value = 0;
 		}
+	}
+
+	openDisclaimer() {
+		this.child.isModalOpen = !this.child.isModalOpen;
 	}
 }
