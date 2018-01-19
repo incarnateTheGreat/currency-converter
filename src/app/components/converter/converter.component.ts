@@ -22,8 +22,11 @@ export class ConverterComponent implements OnInit {
   ngOnInit() {}
 
 	convertCurrency() {
+		
+
+
 		if (_.isEmpty(this.initial_value)) {
-			this.converted_value = 0;
+			this.converted_value = null;
 			return false;
 		}
 

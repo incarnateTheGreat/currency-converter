@@ -6,13 +6,12 @@
 			Type in amount and select currency
 		</span>
 		<div class="_currency-converter_row__inputs">
-			<input type="text"
-						 class="_currency-converter_row_inputs__value"
+			<input class="_currency-converter_row_inputs__value"
 						 placeholder="Type in Currency..."
 						 name="initial_value"
 						 OnlyNumber="true"
 						 [(ngModel)]="initial_value"
-						 (input)="convertCurrency($event.target.value)"
+						 (keyup)="convertCurrency($event.target.value)"
 					 />
 			<select [(ngModel)]="initial_currency"
 							(change)="convertCurrency()">
@@ -27,14 +26,12 @@
 			Converted amount
 		</span>
 		<div class="_currency-converter_row__inputs">
-			<input type="text"
-						 class="_currency-converter_row_inputs__value"
+			<input class="_currency-converter_row_inputs__value"
 						 placeholder="See result here..."
 						 name="converted_value"
 						 OnlyNumber="true"
 						 readonly
 						 [(ngModel)]="converted_value"
-						 (input)="convertCurrency($event.target.value)"
 					 />
 			<select [(ngModel)]="converted_currency"
 							(change)="convertCurrency()">
