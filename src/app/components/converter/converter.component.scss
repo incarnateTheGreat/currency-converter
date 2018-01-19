@@ -26,8 +26,13 @@
 				margin: 0 10px 0 0;
 
 				&[type="text"] {
-					padding: 5px 10px;
+					height: 23px;
+					padding: 0 10px;
 				}
+			}
+			select {
+				height: 24px;
+				width: 55px;
 			}
 		}
 		._currency-converter_row__error-message {
