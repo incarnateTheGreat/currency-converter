@@ -1,3 +1,5 @@
+@import "~sass/styles";
+
 .modal {
 	background-color: rgba(0, 0, 0, 0.4);
 	display: none;
@@ -15,7 +17,7 @@
 
 	._modal-container {
 		align-self: center;
-		background-color: #ffffff;
+		background-color: $white;
 		border-radius: 2px;
 		display: flex;
 		height: 85%;
@@ -23,7 +25,7 @@
 		overflow: hidden;
 		width: 750px;
 
-		@media only screen and (max-width: 992px) {
+		@include respond-to(sm-max) {
 			width: 550px;
 		}
 	}

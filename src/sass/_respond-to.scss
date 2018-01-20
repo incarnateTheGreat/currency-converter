@@ -1,0 +1,13 @@
+@mixin respond-to($media) {
+	// Max widths
+  @if $media == sm-max {
+    @media only screen and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+  @if $media == md-max {
+    @media only screen and (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+}

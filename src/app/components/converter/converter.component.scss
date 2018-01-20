@@ -1,9 +1,11 @@
+@import "~sass/styles";
+
 .currency-converter {
 	display: flex;
 	flex-direction: column;
 
 	._currency-converter__title {
-		font-size: 24px;
+		font-size: $font-size-large;
 		padding: 0 0 10px;
 	}
 
@@ -19,9 +21,9 @@
 			padding: 5px 0;
 
 			input {
-				border: 1px solid #cbd0d8;
+				border: 1px solid $light-grey;
 				border-radius: 2px;
-				box-shadow: inset 0 0 1px 0 #cbd0d8;
+				box-shadow: inset 0 0 1px 0 $light-grey;
 				flex-grow: 1;
 				height: 33px;
 				margin: 0 10px 0 0;
@@ -33,7 +35,7 @@
 			}
 		}
 		._currency-converter_row__error-message {
-			color: #ff0000;
+			color: $red;
 			display: none;
 
 			&.-active {
@@ -44,13 +46,13 @@
 
 	._currency-converter__disclaimer-link {
 		cursor: pointer;
-		color: #009aff;
+		color: $primary-blue;
 		margin-left: auto;
 		text-decoration: underline;
 		transition: color 0.1s ease-in-out;
 
 		&:hover {
-			color: #4cb8ff;
+			color: $secondary-blue;
 		}
 	}
 }
