@@ -4,6 +4,16 @@
 
 To operate the application, you must have `Angular 4` installed on your system. To install, go to [Angular 4](https://cli.angular.io/) for instructions on how to get started.
 
+## Dependencies
+
+Prior to running the Development Server, you must download the latest dependencies for this project. You will need [Node](https://nodejs.org/en/) and [NPM](https://docs.npmjs.com/getting-started/installing-node).
+
+Once the above steps are complete, download the latest dependencies by Running
+
+```
+npm install
+```
+
 ## Development Server
 
 1) From the Command Line, go to the home path that has the folder `currency-converter`.
