@@ -7,7 +7,7 @@ import _ from 'lodash';
 import { GetCurrencyDataService } from '../../services/get-currency-data.service';
 
 @Component({
-  selector: 'app-converter',
+  selector: 'component-converter',
   templateUrl: './converter.component.html',
   styleUrls: ['./converter.component.scss']
 })

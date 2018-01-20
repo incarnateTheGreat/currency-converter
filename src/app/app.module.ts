@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { StoreModule } from '@ngrx/store';
 
 // Components
 import { AppComponent } from './app.component';
@@ -28,8 +27,7 @@ import { GetCurrencyDataService } from './services/get-currency-data.service';
   imports: [
     BrowserModule,
 		HttpModule,
-		FormsModule,
-		StoreModule
+		FormsModule
   ],
   providers: [GetCurrencyDataService],
   bootstrap: [AppComponent]
