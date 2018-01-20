@@ -10,6 +10,9 @@ import { ConverterComponent } from './components/converter/converter.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NotificationComponent } from './components/notification/notification.component';
 
+// Utilities
+import { ValuesPipe } from './utils/pipe';
+
 // Directives
 import { OnlyNumber } from './components/converter/onlynumber.directive';
 
@@ -22,7 +25,8 @@ import { GetCurrencyDataService } from './services/get-currency-data.service';
     ConverterComponent,
 		ModalComponent,
 		OnlyNumber,
-		NotificationComponent
+		NotificationComponent,
+		ValuesPipe
   ],
   imports: [
     BrowserModule,

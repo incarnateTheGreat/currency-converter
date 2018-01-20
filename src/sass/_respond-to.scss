@@ -9,6 +9,11 @@
 
 @mixin respond-to($media) {
 	// Max widths
+	@if $media == xs-max {
+    @media only screen and (max-width: $screen-xs - 1) {
+      @content;
+    }
+  }
   @if $media == sm-max {
     @media only screen and (max-width: $screen-sm-max) {
       @content;

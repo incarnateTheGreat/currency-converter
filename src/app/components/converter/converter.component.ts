@@ -19,6 +19,7 @@ export class ConverterComponent implements OnInit {
 	converted_currency:string = this.currencies[1];
 	isError:boolean = false;
 	errorMessage:string = '';
+	dataServiceObj:object;
 
 	// Channel child components.
 	@ViewChild('modal') modalChild;
@@ -31,6 +32,7 @@ export class ConverterComponent implements OnInit {
 
 		// Run service to the latest Currency Data.
 		this.dataService.getInfo().subscribe((data) => {
+			this.dataServiceObj = data;
       fx.rates = data.rates;
     },
     error => this.notificationChild.error('Sorry. There was a problem with your request.'))
@@ -66,5 +68,6 @@ export class ConverterComponent implements OnInit {
 	// Opens the Disclaimer modal.
 	openDisclaimer() {
 		this.modalChild.isModalOpen = !this.modalChild.isModalOpen;
+		this.modalChild.getContent(this.dataServiceObj);
 	}
 }

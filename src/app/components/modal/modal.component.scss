@@ -22,6 +22,7 @@
 		background-color: $white;
 		border-radius: 2px;
 		display: flex;
+		flex-direction: column;
 		height: 85%;
 		margin: 0 auto;
 		overflow: hidden;
@@ -31,19 +32,50 @@
 			align-items: center;
 			border-bottom: 1px solid $light-grey;
 			display: flex;
-			height: 60px;
 			justify-content: space-between;
-			padding: 0 30px;
-			width: 100%;
+			padding: 20px 30px;
 
 			._modal-container__close {
 				cursor: pointer;
 				font-size: $font-size-medium;
 			}
 		}
+		section {
+			overflow-x: scroll;
+			padding: 10px 30px;
+
+			._modal-container__date {
+				border-bottom: 1px solid $dark-grey;
+				font-weight: bold;
+				margin: 0 0 10px;
+			}
+			._modal-container__currency-values-container {
+				display: flex;
+				flex-direction: column;
+
+				._modal-container__currency-values-container__element {
+					display: flex;
+					padding: 8px 15px;
+
+					&:nth-child(odd) {
+						background-color: $light-grey;
+					}
+
+					span {
+						&:first-child {
+							font-weight: bold;
+							width: 40px;
+						}
+					}
+				}
+			}
+		}
 
 		@include respond-to(sm-max) {
 			width: 550px;
+		}
+		@include respond-to(xs-max) {
+			width: 85%;
 		}
 	}
 }

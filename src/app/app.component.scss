@@ -2,9 +2,9 @@
 
 .container {
 	display: flex;
-	font-family: "Tahoma";
 	font-size: $font-size-base;
 	justify-content: space-between;
+	padding: 10px;
 
 	@include respond-to(sm-max) {
 		flex-direction: column;
@@ -17,7 +17,7 @@
 		border: 1px solid $light-grey;
 		display: flex;
 		flex-direction: column;
-		flex-basis: calc(33.333% - 45px);
+		flex-basis: calc(33.333% - 15px);
 		padding: 10px 15px;
 
 		@include respond-to(sm-max) {

@@ -4,5 +4,14 @@
 			<h2>Currency</h2>
 			<span class="_modal-container__close" (click)="closeModal()">X</span>
 		</header>
+		<section>
+			<h3 class="_modal-container__date">As of {{date}} against {{baseCurrency}}</h3>
+			<ul class="_modal-container__currency-values-container">
+				<li class="_modal-container__currency-values-container__element" *ngFor="let rate of content | values">
+					<span>{{rate.key}}:</span>
+					<span>{{rate.value}}</span>
+				</li>
+			</ul>
+		</section>
 	</div>
 </div>
