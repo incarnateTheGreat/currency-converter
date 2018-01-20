@@ -20,12 +20,16 @@ export class ConverterComponent implements OnInit {
 	isError:boolean = false;
 	errorMessage:string = '';
 
+	// Channel child components.
 	@ViewChild('modal') modalChild;
 	@ViewChild('notification') notificationChild;
 
 	constructor(private dataService: GetCurrencyDataService) { }
 
   ngOnInit() {
+		// TODO: Improve service by putting result in a store.
+
+		// Run service to the latest Currency Data.
 		this.dataService.getInfo().subscribe((data) => {
       fx.rates = data.rates;
     },
@@ -43,6 +47,7 @@ export class ConverterComponent implements OnInit {
 		if (this.initial_value > 0) {
 			this.isError = false;
 
+			// Compare the two currencies to get the converted amount.
 			try {
 				const rate = fx(this.initial_value).
 										 from(this.initial_currency).
@@ -58,6 +63,7 @@ export class ConverterComponent implements OnInit {
 		}
 	}
 
+	// Opens the Disclaimer modal.
 	openDisclaimer() {
 		this.modalChild.isModalOpen = !this.modalChild.isModalOpen;
 	}
