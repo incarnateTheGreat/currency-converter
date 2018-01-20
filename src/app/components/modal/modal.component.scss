@@ -35,6 +35,10 @@
 			justify-content: space-between;
 			padding: 20px 30px;
 
+			h2 {
+				font-weight: bold;
+			}
+
 			._modal-container__close {
 				cursor: pointer;
 				font-size: $font-size-medium;
@@ -42,12 +46,15 @@
 		}
 		section {
 			overflow-x: scroll;
-			padding: 10px 30px;
+			padding: 10px 0;
 
 			._modal-container__date {
 				border-bottom: 1px solid $dark-grey;
-				font-weight: bold;
-				margin: 0 0 10px;
+				margin: 0 30px 10px;
+
+				span {
+					font-weight: bold;
+				}
 			}
 			._modal-container__currency-values-container {
 				display: flex;
@@ -55,7 +62,7 @@
 
 				._modal-container__currency-values-container__element {
 					display: flex;
-					padding: 8px 15px;
+					padding: 8px 30px;
 
 					&:nth-child(odd) {
 						background-color: $light-grey;

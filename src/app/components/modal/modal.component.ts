@@ -10,6 +10,7 @@ export class ModalComponent implements OnInit {
 	content:string;
 	baseCurrency:string;
 	date:string;
+	filterSearch:string;
 
   ngOnInit() {}
 

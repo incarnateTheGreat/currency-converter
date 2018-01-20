@@ -33,9 +33,8 @@ export class ConverterComponent implements OnInit {
 		// Run service to the latest Currency Data.
 		this.dataService.getInfo().subscribe((data) => {
 			this.dataServiceObj = data;
-      fx.rates = data.rates;
-    },
-    error => this.notificationChild.error('Sorry. There was a problem with your request.'))
+			fx.rates = data.rates;
+		}, error => this.notificationChild.error('Sorry. There was a problem with your request.'))
 	}
 
 	convertCurrency() {
